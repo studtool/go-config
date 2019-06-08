@@ -1,0 +1,17 @@
+language: go
+go:
+  - "1.12"
+
+env:
+  - GO111MODULE=on
+
+install: true
+
+jobs:
+  include:
+    - stage: lint
+      script:
+        - make lint
+    - stage: run tests
+      script:
+        - make test
